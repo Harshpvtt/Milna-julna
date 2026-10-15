@@ -1,7 +1,25 @@
+
+
 * {
     box-sizing: border-box;
+
     margin: 0;
+
     padding: 0;
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+html,
+body {
+    width: 100%;
+
+    min-height: 100%;
+
+    overflow-x: hidden;
 }
 
 
@@ -11,6 +29,7 @@ body {
     font-family:
         "Poppins",
         "Segoe UI",
+        Arial,
         sans-serif;
 
     background:
@@ -22,58 +41,64 @@ body {
         );
 
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
-    overflow: hidden;
+    padding: 15px;
 
     color: #4a2630;
 }
 
 
-/* =========================
+/* =========================================
    MAIN CARD
-========================= */
+========================================= */
 
 .container {
-    width: min(92%, 520px);
+    width: 100%;
 
-    min-height: 500px;
+    max-width: 520px;
+
+    max-height: 94vh;
+
+    overflow-y: auto;
 
     background:
-        rgba(255, 255, 255, 0.9);
+        rgba(255, 255, 255, 0.92);
 
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(14px);
 
-    border-radius: 30px;
+    -webkit-backdrop-filter: blur(14px);
 
-    padding: 45px 30px;
+    border-radius: 28px;
+
+    padding: 35px 25px;
 
     text-align: center;
 
     box-shadow:
-        0 20px 60px
+        0 18px 55px
         rgba(164, 65, 95, 0.18);
 
     position: relative;
 
     z-index: 5;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 
-/* =========================
-   SCREENS
-========================= */
+/* =========================================
+   SCREEN
+========================================= */
 
 .screen {
     display: none;
 
+    width: 100%;
+
     animation:
-        fadeIn 0.5s ease;
+        fadeIn 0.45s ease;
 }
 
 
@@ -86,24 +111,28 @@ body {
 
     from {
         opacity: 0;
-        transform: translateY(15px);
+
+        transform:
+            translateY(15px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
     }
 }
 
 
-/* =========================
+/* =========================================
    EMOJI
-========================= */
+========================================= */
 
 .emoji {
-    font-size: 65px;
+    font-size: 58px;
 
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 
     animation:
         bounce 2s infinite;
@@ -114,21 +143,25 @@ body {
 
     0%,
     100% {
-        transform: translateY(0);
+        transform:
+            translateY(0);
     }
 
     50% {
-        transform: translateY(-8px);
+        transform:
+            translateY(-8px);
     }
 }
 
 
-/* =========================
-   TEXT
-========================= */
+/* =========================================
+   HEADINGS
+========================================= */
 
 h1 {
-    font-size: 32px;
+    font-size: 30px;
+
+    line-height: 1.2;
 
     margin-bottom: 15px;
 
@@ -137,7 +170,9 @@ h1 {
 
 
 h2 {
-    font-size: 26px;
+    font-size: 24px;
+
+    line-height: 1.3;
 
     margin-bottom: 15px;
 
@@ -145,34 +180,47 @@ h2 {
 }
 
 
-p {
-    font-size: 17px;
+/* =========================================
+   PARAGRAPHS
+========================================= */
 
-    line-height: 1.6;
+p {
+    font-size: 16px;
+
+    line-height: 1.65;
 
     color: #704653;
 
-    margin-bottom: 25px;
+    margin-bottom: 22px;
 }
 
 
-/* =========================
-   YES / NO BUTTONS
-========================= */
+/* =========================================
+   YES / NO BUTTON AREA
+========================================= */
 
 .buttons {
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    gap: 18px;
+    width: 100%;
 
     min-height: 100px;
 
-    position: relative;
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    overflow: visible;
 }
 
+
+/* =========================================
+   ALL BUTTONS
+========================================= */
 
 button {
     border: none;
@@ -181,10 +229,20 @@ button {
 
     font-family: inherit;
 
+    -webkit-tap-highlight-color:
+        transparent;
+
     transition:
-        all 0.35s ease;
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        opacity 0.3s ease;
 }
 
+
+/* =========================================
+   YES BUTTON
+========================================= */
 
 .yes-btn {
     background:
@@ -196,13 +254,17 @@ button {
 
     color: white;
 
-    padding: 15px 32px;
+    padding: 15px 30px;
 
     border-radius: 50px;
 
     font-size: 18px;
 
     font-weight: 600;
+
+    max-width: 88vw;
+
+    overflow: hidden;
 
     box-shadow:
         0 8px 20px
@@ -211,20 +273,27 @@ button {
 
 
 .yes-btn:hover {
-    transform: scale(1.06);
+    transform:
+        scale(1.05);
 }
 
+
+/* =========================================
+   NO BUTTON
+========================================= */
 
 .no-btn {
     background: #f1dce2;
 
     color: #704653;
 
-    padding: 13px 25px;
+    padding: 13px 24px;
 
     border-radius: 50px;
 
-    font-size: 17px;
+    font-size: 16px;
+
+    white-space: nowrap;
 }
 
 
@@ -233,27 +302,35 @@ button {
 }
 
 
+/* =========================================
+   NO MESSAGE
+========================================= */
+
 .no-message {
     min-height: 30px;
 
-    margin-top: 10px;
+    margin-top: 8px;
 
     color: #c94f72;
 
+    font-size: 14px;
+
     font-weight: 600;
 
-    font-size: 15px;
+    line-height: 1.4;
 }
 
 
-/* =========================
+/* =========================================
    DATE INPUT
-========================= */
+========================================= */
 
 .date-input {
     width: 100%;
 
-    padding: 15px;
+    height: 52px;
+
+    padding: 10px 14px;
 
     border:
         2px solid #f1c5d1;
@@ -268,28 +345,43 @@ button {
 
     outline: none;
 
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 
     background: #fffafd;
+
+    appearance: auto;
 }
 
 
 .date-input:focus {
     border-color: #e85c82;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(232, 92, 130, 0.1);
 }
 
 
-/* =========================
-   CONTINUE BUTTON
-========================= */
+/* =========================================
+   CONTINUE / CONFIRM
+========================================= */
 
 .continue-btn,
 .confirm-btn {
-    background: #e85c82;
+    width: 100%;
+
+    min-height: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e85c82,
+            #d9476c
+        );
 
     color: white;
 
-    padding: 14px 30px;
+    padding: 14px 25px;
 
     border-radius: 30px;
 
@@ -305,7 +397,8 @@ button {
 
 .continue-btn:hover,
 .confirm-btn:hover {
-    transform: translateY(-2px);
+    transform:
+        translateY(-2px);
 
     box-shadow:
         0 10px 25px
@@ -313,22 +406,26 @@ button {
 }
 
 
-/* =========================
-   HANGOUT OPTIONS
-========================= */
+/* =========================================
+   OPTIONS
+========================================= */
 
 .options {
     display: flex;
 
     flex-direction: column;
 
-    gap: 12px;
+    gap: 11px;
+
+    width: 100%;
 
     margin-top: 10px;
 }
 
 
 .option {
+    width: 100%;
+
     background: #fff5f8;
 
     border:
@@ -336,15 +433,17 @@ button {
 
     color: #704653;
 
-    padding: 14px 18px;
+    padding: 14px 16px;
 
-    border-radius: 18px;
+    border-radius: 17px;
 
     font-size: 15px;
 
     text-align: left;
 
-    transition: 0.25s;
+    line-height: 1.35;
+
+    min-height: 50px;
 }
 
 
@@ -353,20 +452,23 @@ button {
 
     border-color: #e85c82;
 
-    transform: translateY(-2px);
+    transform:
+        translateY(-2px);
 }
 
 
-/* =========================
-   LETTER
-========================= */
+/* =========================================
+   FINAL LETTER
+========================================= */
 
 .letter {
+    width: 100%;
+
     background: #fffdf7;
 
-    padding: 28px;
+    padding: 25px 20px;
 
-    border-radius: 8px;
+    border-radius: 10px;
 
     box-shadow:
         0 10px 25px
@@ -386,14 +488,14 @@ button {
 
     position: absolute;
 
-    top: -25px;
+    top: -24px;
 
     left: 50%;
 
     transform:
         translateX(-50%);
 
-    font-size: 45px;
+    font-size: 42px;
 }
 
 
@@ -405,38 +507,44 @@ button {
 
 
 .letter p {
-    font-family: Georgia, serif;
+    font-family:
+        Georgia,
+        serif;
 
-    font-size: 16px;
+    font-size: 15px;
 
-    line-height: 1.8;
+    line-height: 1.75;
 
     color: #594047;
 }
 
 
-/* =========================
-   DETAILS BOX
-========================= */
+/* =========================================
+   DATE / PLAN DETAILS
+========================================= */
 
 .details {
     background: #fff0f4;
 
     border-radius: 15px;
 
-    padding: 15px;
+    padding: 14px;
 
     margin: 15px 0;
 
-    font-size: 15px;
+    font-size: 14px;
 
-    line-height: 1.8;
+    line-height: 1.9;
+
+    color: #594047;
+
+    overflow-wrap: anywhere;
 }
 
 
-/* =========================
+/* =========================================
    SIGNATURE
-========================= */
+========================================= */
 
 .signature {
     text-align: right;
@@ -447,13 +555,13 @@ button {
 
     color: #c94f72;
 
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 
-/* =========================
+/* =========================================
    SUBMIT MESSAGE
-========================= */
+========================================= */
 
 .submit-message {
     text-align: center;
@@ -462,13 +570,15 @@ button {
 
     font-weight: bold;
 
-    margin-top: 15px;
+    margin-top: 14px;
+
+    margin-bottom: 0 !important;
 }
 
 
-/* =========================
+/* =========================================
    FLOATING HEARTS
-========================= */
+========================================= */
 
 .heart {
     position: fixed;
@@ -484,7 +594,11 @@ button {
 
     pointer-events: none;
 
-    z-index: 0;
+    z-index: 1;
+
+    will-change:
+        transform,
+        opacity;
 }
 
 
@@ -508,39 +622,145 @@ button {
 }
 
 
-/* =========================
+/* =========================================
    MOBILE
-========================= */
+========================================= */
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
+
+    body {
+        padding: 12px;
+
+        align-items: center;
+    }
+
 
     .container {
-        padding: 35px 20px;
+        width: 100%;
+
+        max-width: 420px;
+
+        max-height: 94vh;
+
+        padding: 30px 17px;
+
+        border-radius: 25px;
     }
+
+
+    .emoji {
+        font-size: 52px;
+
+        margin-bottom: 10px;
+    }
+
 
     h1 {
         font-size: 27px;
     }
 
+
     h2 {
-        font-size: 23px;
+        font-size: 22px;
     }
 
-    .emoji {
-        font-size: 55px;
+
+    p {
+        font-size: 15px;
+
+        line-height: 1.6;
     }
+
 
     .buttons {
+        min-height: 95px;
+
         gap: 10px;
     }
+
 
     .yes-btn,
     .no-btn {
         font-size: 15px;
     }
 
+
+    .option {
+        font-size: 14px;
+
+        padding: 13px 14px;
+
+        border-radius: 15px;
+    }
+
+
     .letter {
-        padding: 23px;
+        padding: 23px 17px;
+    }
+
+
+    .letter p {
+        font-size: 14.5px;
+
+        line-height: 1.7;
+    }
+
+
+    .details {
+        font-size: 13.5px;
+
+        padding: 13px;
+    }
+
+
+    .confirm-btn {
+        min-height: 50px;
+
+        font-size: 15px;
+    }
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 360px) {
+
+    body {
+        padding: 8px;
+    }
+
+
+    .container {
+        padding: 25px 14px;
+
+        border-radius: 22px;
+    }
+
+
+    .emoji {
+        font-size: 45px;
+    }
+
+
+    h1 {
+        font-size: 24px;
+    }
+
+
+    h2 {
+        font-size: 20px;
+    }
+
+
+    p {
+        font-size: 14px;
+    }
+
+
+    .letter {
+        padding: 20px 14px;
     }
 }
 
