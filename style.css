@@ -1,0 +1,546 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        "Poppins",
+        "Segoe UI",
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff0f5,
+            #ffe4ec,
+            #fff7f9
+        );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    color: #4a2630;
+}
+
+
+/* =========================
+   MAIN CARD
+========================= */
+
+.container {
+    width: min(92%, 520px);
+
+    min-height: 500px;
+
+    background:
+        rgba(255, 255, 255, 0.9);
+
+    backdrop-filter: blur(12px);
+
+    border-radius: 30px;
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 60px
+        rgba(164, 65, 95, 0.18);
+
+    position: relative;
+
+    z-index: 5;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/* =========================
+   SCREENS
+========================= */
+
+.screen {
+    display: none;
+
+    animation:
+        fadeIn 0.5s ease;
+}
+
+
+.screen.active {
+    display: block;
+}
+
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   EMOJI
+========================= */
+
+.emoji {
+    font-size: 65px;
+
+    margin-bottom: 15px;
+
+    animation:
+        bounce 2s infinite;
+}
+
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+h1 {
+    font-size: 32px;
+
+    margin-bottom: 15px;
+
+    color: #c94f72;
+}
+
+
+h2 {
+    font-size: 26px;
+
+    margin-bottom: 15px;
+
+    color: #c94f72;
+}
+
+
+p {
+    font-size: 17px;
+
+    line-height: 1.6;
+
+    color: #704653;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   YES / NO BUTTONS
+========================= */
+
+.buttons {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 18px;
+
+    min-height: 100px;
+
+    position: relative;
+}
+
+
+button {
+    border: none;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    transition:
+        all 0.35s ease;
+}
+
+
+.yes-btn {
+    background:
+        linear-gradient(
+            135deg,
+            #ff6f91,
+            #e84f76
+        );
+
+    color: white;
+
+    padding: 15px 32px;
+
+    border-radius: 50px;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 8px 20px
+        rgba(232, 79, 118, 0.3);
+}
+
+
+.yes-btn:hover {
+    transform: scale(1.06);
+}
+
+
+.no-btn {
+    background: #f1dce2;
+
+    color: #704653;
+
+    padding: 13px 25px;
+
+    border-radius: 50px;
+
+    font-size: 17px;
+}
+
+
+.no-btn:hover {
+    background: #ead0d8;
+}
+
+
+.no-message {
+    min-height: 30px;
+
+    margin-top: 10px;
+
+    color: #c94f72;
+
+    font-weight: 600;
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   DATE INPUT
+========================= */
+
+.date-input {
+    width: 100%;
+
+    padding: 15px;
+
+    border:
+        2px solid #f1c5d1;
+
+    border-radius: 15px;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    color: #704653;
+
+    outline: none;
+
+    margin-bottom: 20px;
+
+    background: #fffafd;
+}
+
+
+.date-input:focus {
+    border-color: #e85c82;
+}
+
+
+/* =========================
+   CONTINUE BUTTON
+========================= */
+
+.continue-btn,
+.confirm-btn {
+    background: #e85c82;
+
+    color: white;
+
+    padding: 14px 30px;
+
+    border-radius: 30px;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 7px 18px
+        rgba(232, 92, 130, 0.25);
+}
+
+
+.continue-btn:hover,
+.confirm-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(232, 92, 130, 0.35);
+}
+
+
+/* =========================
+   HANGOUT OPTIONS
+========================= */
+
+.options {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin-top: 10px;
+}
+
+
+.option {
+    background: #fff5f8;
+
+    border:
+        2px solid #f3d1da;
+
+    color: #704653;
+
+    padding: 14px 18px;
+
+    border-radius: 18px;
+
+    font-size: 15px;
+
+    text-align: left;
+
+    transition: 0.25s;
+}
+
+
+.option:hover {
+    background: #ffe5ed;
+
+    border-color: #e85c82;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter {
+    background: #fffdf7;
+
+    padding: 28px;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 10px 25px
+        rgba(80, 40, 50, 0.12);
+
+    position: relative;
+
+    text-align: left;
+
+    border:
+        1px solid #f1e5d9;
+}
+
+
+.letter::before {
+    content: "💌";
+
+    position: absolute;
+
+    top: -25px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    font-size: 45px;
+}
+
+
+.letter h2 {
+    margin-top: 15px;
+
+    text-align: center;
+}
+
+
+.letter p {
+    font-family: Georgia, serif;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    color: #594047;
+}
+
+
+/* =========================
+   DETAILS BOX
+========================= */
+
+.details {
+    background: #fff0f4;
+
+    border-radius: 15px;
+
+    padding: 15px;
+
+    margin: 15px 0;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   SIGNATURE
+========================= */
+
+.signature {
+    text-align: right;
+
+    font-family: cursive;
+
+    font-size: 20px;
+
+    color: #c94f72;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   SUBMIT MESSAGE
+========================= */
+
+.submit-message {
+    text-align: center;
+
+    color: #c94f72 !important;
+
+    font-weight: bold;
+
+    margin-top: 15px;
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.heart {
+    position: fixed;
+
+    bottom: -30px;
+
+    font-size: 22px;
+
+    opacity: 0.7;
+
+    animation:
+        floatUp linear forwards;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+@keyframes floatUp {
+
+    from {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0.8;
+    }
+
+    to {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+    .container {
+        padding: 35px 20px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    h2 {
+        font-size: 23px;
+    }
+
+    .emoji {
+        font-size: 55px;
+    }
+
+    .buttons {
+        gap: 10px;
+    }
+
+    .yes-btn,
+    .no-btn {
+        font-size: 15px;
+    }
+
+    .letter {
+        padding: 23px;
+    }
+}
+

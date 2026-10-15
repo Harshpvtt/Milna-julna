@@ -1,0 +1,217 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Little Question 💗</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="hearts-container"></div>
+
+    <main class="container">
+
+        <!-- SCREEN 1 -->
+        <section class="screen active" id="screen1">
+
+            <div class="emoji">🥺</div>
+
+            <h1>Heyyy...</h1>
+
+            <p>
+                I have a very important question to ask you...
+                <br><br>
+                Would you like to hang out with me sometime? 👉👈
+            </p>
+
+            <div class="buttons">
+
+                <button
+                    type="button"
+                    class="yes-btn"
+                    id="yesBtn">
+                    Yes 💗
+                </button>
+
+                <button
+                    type="button"
+                    class="no-btn"
+                    id="noBtn">
+                    No 🙃
+                </button>
+
+            </div>
+
+            <div
+                class="no-message"
+                id="noMessage">
+            </div>
+
+        </section>
+
+
+        <!-- SCREEN 2 -->
+        <section class="screen" id="screen2">
+
+            <div class="emoji">😭💗</div>
+
+            <h1>YAYYYYY!!!</h1>
+
+            <p>
+                I knew you'd say yes 😭❤️
+                <br>
+                Okay okay... now let's make it official.
+            </p>
+
+            <h2>Pick a date 📅</h2>
+
+            <input
+                type="date"
+                id="dateInput"
+                class="date-input">
+
+            <br>
+
+            <button
+                type="button"
+                class="continue-btn"
+                id="dateBtn">
+                Continue 💕
+            </button>
+
+        </section>
+
+
+        <!-- SCREEN 3 -->
+        <section class="screen" id="screen3">
+
+            <div class="emoji">📍💗</div>
+
+            <h2>Okay, one more thing...</h2>
+
+            <p>
+                Where should we go? 👀
+            </p>
+
+            <div class="options">
+
+                <button
+                    type="button"
+                    class="option"
+                    data-place="Movie ghumna 🎬">
+                    🎬 Movie ghumna
+                </button>
+
+                <button
+                    type="button"
+                    class="option"
+                    data-place="Momos ghumna 🥟">
+                    🥟 Momos ghumna
+                </button>
+
+                <button
+                    type="button"
+                    class="option"
+                    data-place="Aise hi bss ghumna 🚶">
+                    🚶 Aise hi bss ghumna
+                </button>
+
+                <button
+                    type="button"
+                    class="option"
+                    data-place="CP ya Lodhi Garden 🌳">
+                    🌳 CP ya Lodhi Garden ghumna
+                </button>
+
+                <button
+                    type="button"
+                    class="option"
+                    data-place="Jo aap bolo 💗">
+                    💗 Ya jo aap bolo waha ghumna
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- SCREEN 4 -->
+        <section class="screen" id="screen4">
+
+            <div class="letter">
+
+                <h2>It's Official 💌</h2>
+
+                <p>
+                    Sooo...
+                    <br><br>
+
+                    It's officially a plan! 🥹❤️
+
+                    <br><br>
+
+                    I'm genuinely very happy that we're
+                    finally going to hang out.
+
+                    <br><br>
+
+                    I promise it'll be fun, there'll be lots
+                    of talking, laughing, random walks and
+                    probably some unnecessary food too. 😂
+                </p>
+
+                <div class="details">
+
+                    📅 <strong>Date:</strong>
+                    <span id="finalDate"></span>
+
+                    <br>
+
+                    📍 <strong>Plan:</strong>
+                    <span id="finalPlace"></span>
+
+                </div>
+
+                <p>
+                    Looking forward to seeing you. 🫶
+                    <br><br>
+
+                    <strong>
+                        Meet-up fixed. No cancellations allowed. 😌
+                    </strong>
+                </p>
+
+                <div class="signature">
+                    — Me 💗
+                </div>
+
+                <button
+                    type="button"
+                    class="confirm-btn"
+                    id="confirmBtn">
+                    Confirm our Milna 💌
+                </button>
+
+                <p
+                    id="submitMessage"
+                    class="submit-message">
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+```
